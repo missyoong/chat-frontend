@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500&family=Poppins&display=swap');
+
+:root {
+  --background-color: #fafafa;
+  --primary-color: rgb(248, 208, 96);
+  --border-color: #fff29c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Montserrat;
+  color: rgb(255, 255, 255);
+  height: 100vh;
+  background: rgb(16, 33, 61);
+}
+ul {
+  list-style: none;
+}
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.users-container,
+.rooms-container {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  padding: 2.1rem;
+  width: 500px;
+  height: 65vh;
+  background: rgb(238, 238, 238);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.users-container ul,
+.rooms-container ul {
+  overflow-y: scroll;
+  padding: 2rem;
+  overflow-x: hidden;
+  margin-top: 1rem;
+}
+
+.users li,
+.rooms li {
+  cursor: pointer;
+  text-align: center;
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  margin: 5px auto;
+  font-size: 1rem;
+  padding: 1rem 1.5rem;
+  color: #000;
+}
+
+.users li:hover,
+.rooms li:hover {
+  transform: scale(1.05);
+  background-color: rgb(248, 200, 69);
+}
+
+.rooms_heading,
+.users_heading,
+.main_heading {
+  text-align: center;
+}
+
+
+::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+  color: var(--primary-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 5px;
+}
+
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+  height: 60vh;
+  background-color: inherit;
+  margin: 1rem auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-top: 1rem;
+}
+
+.chat-me,
+.chat-user {
+  color: #fff;
+  border-radius: 20px;
+  padding: 1rem;
+  margin: 10px auto;
+  font-weight: bold;
+  animation-iteration-count: 1;
+  margin-right: 1.2rem;
+  margin-left: 1.2rem;
+}
+
+.chat-me {
+  justify-self: flex-end;
+  text-align: right;
+  background-color: #77a65c;
+  animation: fademe 0.3s;
+}
+
+.chat-user {
+  justify-self: flex-start;
+  text-align: left;
+  background-color: #bcbcbc;
+  color: #000;
+  animation: fadeuser 0.3s;
+}
+
+
+.chat-form {
+  display: flex;
+  justify-content: center;
+  width: 110%;
+}
+
+.chat-form input {
+  padding: 1rem 2rem;
+  outline: 0;
+  border: 0;
+  background-color: #e2e2e2;
+  color: rgb(79, 79, 79);
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.chat-form input::placeholder {
+  color: rgb(92, 92, 92);
+}
+
+
+@keyframes fademe {
+  from {
+    opacity: 0;
+    transform: translateX(+100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fadeuser {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  font-size: 18px;
+  padding: 1.5rem 2rem;
+  border: none;
+  outline: 0;
+  font-weight: bold;
+  font-family: inherit;
+  transition: 0.3s;
+  background: rgb(222, 220, 220);
+}
+
+.btn-container {
+  padding: 1rem 0;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+.btn:active {
+  transform: scale(1.09);
+}
+
+.send_btn
+{
+  padding: 1.5rem 2rem;
+  outline: 0;
+  border: 0;
+  font-size: 1.2rem;
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: rgb(92, 92, 92);
+  display: block;
+}
+
+.send_btn {
+  background-color: #e2e2e2;
+
+}
+
+
+.send_btn:hover {
+  transform: scale(1.05);
+  background-position: right center; 
+  color: #fff;
+  text-decoration: none;
+}
+
+
+.send_btn:active {
+  transform: scale(1.09);
+}
+
+
+.users_heading,
+.rooms_heading,
+.no_rooms {
+  background-color: inherit;
+  border-radius: 20px;
+  padding: 1rem 3rem;
+  color: #000;
+}
+
+.main_heading {
+  background: var(--primary-color);
+  margin: 0;
+  padding: 1rem;
+  color: #000;
+}
+
+.my_socket {
+  color: rgb(234, 234, 234);
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.roomjoined {
+  text-align: center;
+  font-size: 2rem;
+  color: rgb(241, 241, 241);
+  margin-top: 0.2rem;
+}
+
